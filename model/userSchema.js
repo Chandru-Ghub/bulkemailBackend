@@ -25,6 +25,10 @@ const User = mongoose.Schema({
     time:{
         type:String,
         default:new Date
+    },
+    check:{
+        type:String,
+        default:'ok'
     }
 },{
     timestamps:true,
