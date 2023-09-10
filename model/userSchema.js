@@ -27,7 +27,7 @@ const User = mongoose.Schema({
         default:new Date
     }
 },{
-    timestamp :true
+    timestamps:true,
 })
 
 module.exports = mongoose.model('records',User);
