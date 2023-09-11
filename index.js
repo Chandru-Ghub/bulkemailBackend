@@ -6,7 +6,8 @@ const multer = require('multer');
 const path = require('path');
 const User = require('./model/userSchema')
 const dotenv = require('dotenv').config()
-const registerUser = require('./model/registerUser')
+const registerUser = require('./model/registerUser');
+const { log } = require('console');
 const PORT = process.env.Port || 5500;
 app.use(express.json());
 app.use(cors())
@@ -37,6 +38,7 @@ app.post('/sendmail',upload.array('file',10),(req,res)=>{
     const{from,to,subject,message,bulkmailId,sendtime} = req.body;
     // const {file} = req.file;
     // console.log(req.files);
+    // console.log(sendtime);
     const fromMail = from;
     var toMail = bulkmailId?bulkmailId:to;
     const sub = subject;
