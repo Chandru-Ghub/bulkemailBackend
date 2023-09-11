@@ -34,7 +34,7 @@ storage:storage
 
 app.post('/sendmail',upload.array('file',10),(req,res)=>{
 
-    const{from,to,subject,message,bulkmailId} = req.body;
+    const{from,to,subject,message,bulkmailId,sendtime} = req.body;
     // const {file} = req.file;
     // console.log(req.files);
     const fromMail = from;
@@ -51,7 +51,7 @@ app.post('/sendmail',upload.array('file',10),(req,res)=>{
 
     var toMailArray = toMail.split(',');
     // console.log(toMailArray);
-    User.create({fromMail,toMail:toMailArray,sub,message,files:filesName})
+    User.create({fromMail,toMail:toMailArray,sub,message,files:filesName,sendtime})
     .then(result => console.log('created'))
     .catch(err => console.log(err))
 

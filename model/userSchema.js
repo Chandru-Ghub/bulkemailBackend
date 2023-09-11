@@ -25,6 +25,10 @@ const User = mongoose.Schema({
     time:{
         type:String,
         default:new Date
+    },
+    sendtime:{
+        typeo:String,
+        required:true,
     }
 },{
     timestamps:true,
